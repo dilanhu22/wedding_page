@@ -2,23 +2,31 @@ import { ArrowDown, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import CalendarButton from "../components/CalendarButton";
 import Countdown from "../components/Countdown";
-import { wedding } from "../data";
+import { featuredPhotos, wedding } from "../data";
+import useLang from "../i18n/useLang";
 
 export default function Home() {
+  const { t } = useLang();
+
   return (
     <>
       <section className="home-hero">
-        <div className="hero-photo" aria-hidden="true" />
+        <div
+          className="hero-photo"
+          style={{ backgroundImage: `url(${featuredPhotos.hero})` }}
+          role="img"
+          aria-label={t.home.heroAlt}
+        />
         <div className="hero-tint" aria-hidden="true" />
         <div className="hero-content reveal">
-          <p className="hero-kicker">We are getting married</p>
+          <p className="hero-kicker">{t.home.kicker}</p>
           <h1>
             <span>{wedding.firstName}</span>
             <i>&</i>
             <span>{wedding.secondName}</span>
           </h1>
-          <p className="hero-date">{wedding.date} · {wedding.city}</p>
-          <a className="scroll-cue" href="#invitation" aria-label="View invitation">
+          <p className="hero-date">{t.dateLong} · {t.city}</p>
+          <a className="scroll-cue" href="#invitation" aria-label={t.aria.viewInvitation}>
             <ArrowDown size={18} />
           </a>
         </div>
@@ -26,20 +34,20 @@ export default function Home() {
 
       <section id="invitation" className="invitation section">
         <div className="shell narrow center">
-          <p className="eyebrow">Together with our families</p>
-          <h2>Meet us where the sky touches the sea</h2>
-          <p className="lead">{wedding.welcome}</p>
+          <p className="eyebrow">{t.home.invitationEyebrow}</p>
+          <h2>{t.home.invitationTitle}</h2>
+          <p className="lead">{t.home.welcome}</p>
           <div className="date-lockup">
-            <span>Sunday</span>
-            <strong>21</strong>
-            <span>March · 2027</span>
+            <span>{t.lockup.weekday}</span>
+            <strong>{t.lockup.day}</strong>
+            <span>{t.lockup.monthYear}</span>
           </div>
           <Countdown />
           <div className="button-row">
             <CalendarButton />
             <Link className="button button-ghost" to="/location">
               <MapPin size={18} />
-              View location
+              {t.home.viewLocation}
             </Link>
           </div>
         </div>
@@ -48,30 +56,27 @@ export default function Home() {
       <section className="home-story-preview section">
         <div className="shell split">
           <div className="organic-image preview-image">
-            <img
-              src="https://images.unsplash.com/photo-1760669346066-cdcc36756c8c?auto=format&fit=crop&q=85&w=1400"
-              alt="A couple walking toward a seaside ceremony"
-            />
+            <img src={featuredPhotos.storyPreview} alt={t.home.previewAlt} />
           </div>
           <div className="split-copy">
-            <p className="eyebrow">A little about us</p>
-            <h2>One love, many adventures</h2>
-            <p>
-              From our first conversation to the promise of forever, every
-              chapter has brought us closer to this sunlit celebration.
-            </p>
+            <p className="eyebrow">{t.home.previewEyebrow}</p>
+            <h2>{t.home.previewTitle}</h2>
+            <p>{t.home.previewText}</p>
             <Link className="text-link" to="/story">
-              Read our story <span>→</span>
+              {t.home.previewLink} <span>→</span>
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="closing-banner">
+      <section
+        className="closing-banner"
+        style={{ "--closing-photo": `url(${featuredPhotos.closing})` }}
+      >
         <div className="shell center">
-          <p className="script-line">Save the date</p>
-          <h2>We cannot wait to celebrate with you</h2>
-          <p>{wedding.date} · {wedding.time}</p>
+          <p className="script-line">{t.home.closingScript}</p>
+          <h2>{t.home.closingTitle}</h2>
+          <p>{t.dateLong} · {t.timeRange}</p>
         </div>
       </section>
     </>

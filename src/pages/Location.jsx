@@ -1,49 +1,51 @@
-import { Clock, ExternalLink, MapPin, Navigation } from "lucide-react";
+import { Clock, ExternalLink, Hotel, MapPin, Navigation } from "lucide-react";
 import CalendarButton from "../components/CalendarButton";
 import PageHero from "../components/PageHero";
-import { wedding } from "../data";
+import { featuredPhotos, wedding } from "../data";
+import useLang from "../i18n/useLang";
 
 export default function Location() {
+  const { t } = useLang();
+
   return (
     <>
       <PageHero
-        eyebrow="Where we will say I do"
-        title="The Location"
-        text="A warm sunset, the sound of the waves, and all our favorite people in one place."
+        eyebrow={t.location.eyebrow}
+        title={t.location.title}
+        text={t.location.text}
       />
       <section className="section location-section">
         <div className="shell location-grid">
           <div className="location-photo">
-            <img
-              src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=85&w=1600"
-              alt="Romantic outdoor wedding by the coast"
-            />
+            <img src={featuredPhotos.location} alt={t.location.photoAlt} />
             <span className="location-pin"><MapPin /></span>
           </div>
           <div className="location-copy">
-            <p className="eyebrow">Ceremony & reception</p>
+            <p className="eyebrow">{t.location.sectionEyebrow}</p>
             <h2>{wedding.venue}</h2>
             <p className="location-address">{wedding.address}</p>
             <div className="location-details">
               <div>
                 <Clock />
-                <span><small>Guest arrival</small>{wedding.time}</span>
+                <span><small>{t.location.arrivalLabel}</small>{t.timeRange}</span>
               </div>
               <div>
                 <Navigation />
-                <span><small>Area</small>{wedding.city}</span>
+                <span><small>{t.location.areaLabel}</small>{t.city}</span>
               </div>
             </div>
-            <p>
-              The ceremony and reception will take place at the same venue.
-              More details about transport and accommodation will be added
-              here soon.
-            </p>
+            <p>{t.location.body}</p>
             <div className="button-row left">
               <a className="button button-primary" href={wedding.mapUrl} target="_blank" rel="noreferrer">
                 <ExternalLink size={18} />
-                Open in Maps
+                {t.location.openMaps}
               </a>
+              <a className="button button-ghost" href={wedding.hotelUrl} target="_blank" rel="noreferrer">
+                <Hotel size={18} />
+                {t.location.hotelSite}
+              </a>
+            </div>
+            <div className="button-row left">
               <CalendarButton className="button button-ghost" />
             </div>
           </div>

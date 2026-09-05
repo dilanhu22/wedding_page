@@ -1,36 +1,103 @@
+import { useCallback, useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import PageHero from "../components/PageHero";
-import { storyMoments } from "../data";
+import { storyPhotos } from "../data";
+import useLang from "../i18n/useLang";
 
 export default function Story() {
+  const { t } = useLang();
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const close = useCallback(() => setOpenIndex(null), []);
+  const step = useCallback(
+    (delta) =>
+      setOpenIndex((current) =>
+        current === null
+          ? current
+          : (current + delta + storyPhotos.length) % storyPhotos.length,
+      ),
+    [],
+  );
+
+  useEffect(() => {
+    if (openIndex === null) return undefined;
+
+    const onKey = (event) => {
+      if (event.key === "Escape") close();
+      if (event.key === "ArrowRight") step(1);
+      if (event.key === "ArrowLeft") step(-1);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [openIndex, close, step]);
+
   return (
     <>
       <PageHero
-        eyebrow="Every chapter led us here"
-        title="Our Story"
-        text="A few favorite memories from the beautiful journey we share."
+        eyebrow={t.story.eyebrow}
+        title={t.story.title}
+        text={t.story.text}
       />
       <section className="section story-section">
-        <div className="shell story-list">
-          {storyMoments.map((moment, index) => (
-            <article className={`story-moment ${index % 2 ? "reverse" : ""}`} key={moment.title}>
-              <div className="story-photo-wrap">
-                <span className="story-number">0{index + 1}</span>
+        <div className="shell">
+          <div className="photo-grid">
+            {storyPhotos.map((photo, index) => (
+              <button
+                type="button"
+                className={`photo-tile ${photo.wide ? "wide" : ""}`}
+                key={photo.src}
+                onClick={() => setOpenIndex(index)}
+                aria-label={t.story.openPhoto}
+              >
                 <img
-                  className="story-photo"
-                  src={moment.image}
-                  alt={moment.title}
-                  style={{ objectPosition: moment.position }}
+                  src={photo.src}
+                  alt={t.story.photoAlt}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
                 />
-              </div>
-              <div className="story-copy">
-                <p className="eyebrow">{moment.year}</p>
-                <h2>{moment.title}</h2>
-                <p>{moment.text}</p>
-              </div>
-            </article>
-          ))}
+              </button>
+            ))}
+          </div>
         </div>
       </section>
+
+      {openIndex !== null && (
+        <div className="lightbox" role="dialog" aria-modal="true" onClick={close}>
+          <button className="lightbox-close" onClick={close} aria-label={t.story.closePhoto}>
+            <X />
+          </button>
+          <button
+            className="lightbox-nav prev"
+            onClick={(event) => {
+              event.stopPropagation();
+              step(-1);
+            }}
+            aria-label={t.story.prevPhoto}
+          >
+            <ChevronLeft />
+          </button>
+          <img
+            src={storyPhotos[openIndex].src}
+            alt={t.story.photoAlt}
+            onClick={(event) => event.stopPropagation()}
+          />
+          <button
+            className="lightbox-nav next"
+            onClick={(event) => {
+              event.stopPropagation();
+              step(1);
+            }}
+            aria-label={t.story.nextPhoto}
+          >
+            <ChevronRight />
+          </button>
+        </div>
+      )}
     </>
   );
 }

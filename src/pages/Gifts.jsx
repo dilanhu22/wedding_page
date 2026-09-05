@@ -2,76 +2,75 @@ import { Check, Copy, Gift, Heart } from "lucide-react";
 import { useState } from "react";
 import PageHero from "../components/PageHero";
 import { bankDetails } from "../data";
+import useLang from "../i18n/useLang";
 
-const rows = [
-  ["Account name", bankDetails.accountName],
-  ["Bank", bankDetails.bankName],
-  ["Account type", bankDetails.accountType],
-  ["Account number", bankDetails.accountNumber],
-  ["IBAN", bankDetails.iban],
-  ["SWIFT / BIC", bankDetails.swift],
-  ["Currency", bankDetails.currency],
-  ["Reference", bankDetails.reference],
+const fieldOrder = [
+  "accountName",
+  "bankName",
+  "accountType",
+  "accountNumber",
+  "iban",
+  "swift",
+  "currency",
+  "reference",
 ];
 
 export default function Gifts() {
+  const { t } = useLang();
   const [copied, setCopied] = useState("");
 
-  async function copyValue(label, value) {
+  async function copyValue(field, value) {
     await navigator.clipboard.writeText(value);
-    setCopied(label);
+    setCopied(field);
     window.setTimeout(() => setCopied(""), 1800);
   }
 
   return (
     <>
       <PageHero
-        eyebrow="Your presence is the greatest gift"
-        title="Gift & Bank Transfer"
-        text="For those who have asked, here are the details for a contribution toward our next adventure."
+        eyebrow={t.gifts.eyebrow}
+        title={t.gifts.title}
+        text={t.gifts.text}
       />
       <section className="section gift-section">
         <div className="shell gift-layout">
           <div className="gift-message">
             <div className="round-icon"><Gift /></div>
-            <h2>Celebrating together is all we need</h2>
-            <p>
-              We feel incredibly lucky to share this day with you. If you would
-              like to give a gift, a contribution to our future plans would be
-              warmly appreciated, but never expected.
-            </p>
+            <h2>{t.gifts.messageTitle}</h2>
+            <p>{t.gifts.messageText}</p>
             <div className="gift-signoff">
               <Heart size={17} fill="currentColor" />
-              With love, Shanty & Chris
+              {t.gifts.signoff}
             </div>
           </div>
 
           <div className="bank-card">
             <div className="bank-card-heading">
               <div>
-                <p className="eyebrow">Transfer details</p>
-                <h2>Bank information</h2>
+                <p className="eyebrow">{t.gifts.transferEyebrow}</p>
+                <h2>{t.gifts.bankTitle}</h2>
               </div>
-              <span className="secure-pill">Temporary data</span>
+              <span className="secure-pill">{t.gifts.temporaryPill}</span>
             </div>
+            <p className="bank-pending">{t.gifts.pending}</p>
             <div className="bank-rows">
-              {rows.map(([label, value]) => (
-                <div className="bank-row" key={label}>
+              {fieldOrder.map((field) => (
+                <div className="bank-row" key={field}>
                   <div>
-                    <span>{label}</span>
-                    <strong>{value}</strong>
+                    <span>{t.gifts.fields[field]}</span>
+                    <strong>{bankDetails[field]}</strong>
                   </div>
-                  <button onClick={() => copyValue(label, value)} aria-label={`Copy ${label}`}>
-                    {copied === label ? <Check /> : <Copy />}
-                    <span>{copied === label ? "Copied" : "Copy"}</span>
+                  <button
+                    onClick={() => copyValue(field, bankDetails[field])}
+                    aria-label={`${t.gifts.copyAria} ${t.gifts.fields[field]}`}
+                  >
+                    {copied === field ? <Check /> : <Copy />}
+                    <span>{copied === field ? t.gifts.copied : t.gifts.copy}</span>
                   </button>
                 </div>
               ))}
             </div>
-            <p className="bank-note">
-              Please include your name in the transfer reference so we can
-              thank you properly.
-            </p>
+            <p className="bank-note">{t.gifts.note}</p>
           </div>
         </div>
       </section>

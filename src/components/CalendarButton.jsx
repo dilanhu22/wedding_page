@@ -1,12 +1,15 @@
 import { CalendarPlus } from "lucide-react";
 import { wedding } from "../data";
+import useLang from "../i18n/useLang";
 
 export default function CalendarButton({ className = "button button-primary" }) {
+  const { t } = useLang();
+
   const params = new URLSearchParams({
     action: "TEMPLATE",
-    text: `${wedding.couple}'s Wedding`,
+    text: t.calendar.eventTitle,
     dates: `${wedding.calendar.start}/${wedding.calendar.end}`,
-    details: wedding.welcome,
+    details: t.home.welcome,
     location: `${wedding.venue}, ${wedding.address}`,
   });
 
@@ -18,7 +21,7 @@ export default function CalendarButton({ className = "button button-primary" }) 
       rel="noreferrer"
     >
       <CalendarPlus size={18} />
-      Add to calendar
+      {t.calendar.button}
     </a>
   );
 }

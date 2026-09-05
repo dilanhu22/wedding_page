@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
+import { wedding } from "../data";
+import useLang from "../i18n/useLang";
 
-const weddingDate = new Date("2027-03-21T16:30:00-06:00");
+const weddingDate = new Date(wedding.isoStart);
 
 function getTimeLeft() {
   const difference = Math.max(0, weddingDate.getTime() - Date.now());
@@ -13,6 +15,7 @@ function getTimeLeft() {
 }
 
 export default function Countdown() {
+  const { t } = useLang();
   const initial = useMemo(getTimeLeft, []);
   const [time, setTime] = useState(initial);
 
@@ -22,11 +25,11 @@ export default function Countdown() {
   }, []);
 
   return (
-    <div className="countdown" aria-label="Countdown to our wedding">
+    <div className="countdown" aria-label={t.aria.countdown}>
       {Object.entries(time).map(([label, value]) => (
         <div className="countdown-item" key={label}>
           <strong>{String(value).padStart(2, "0")}</strong>
-          <span>{label}</span>
+          <span>{t.countdown[label]}</span>
         </div>
       ))}
     </div>
