@@ -22,15 +22,21 @@ export const wedding = {
 
 export const storyPhotos = [
   { src: "/photos/photo-12.jpg", wide: true },
-  { src: "/photos/photo-01.jpg" },
-  { src: "/photos/photo-09.jpg" },
-  { src: "/photos/photo-02.jpg" },
-  { src: "/photos/photo-04.jpg", wide: true },
   { src: "/photos/photo-11.jpg" },
+  { src: "/photos/photo-16.jpg" },
+  { src: "/photos/photo-14.jpg" },
+  { src: "/photos/photo-04.jpg", wide: true },
+  { src: "/photos/photo-09.jpg" },
+  { src: "/photos/photo-13.jpg" },
+  { src: "/photos/photo-01.jpg" },
+  { src: "/photos/photo-15.jpg" },
+  { src: "/photos/photo-17.jpg", wide: true },
+  { src: "/photos/photo-08.jpg" },
+  { src: "/photos/photo-02.jpg" },
+  { src: "/photos/photo-18.jpg" },
   { src: "/photos/photo-06.jpg" },
   { src: "/photos/photo-03.jpg" },
   { src: "/photos/photo-10.jpg" },
-  { src: "/photos/photo-08.jpg" },
   { src: "/photos/photo-05.jpg" },
   { src: "/photos/photo-07.jpg" },
 ];
@@ -38,8 +44,8 @@ export const storyPhotos = [
 export const featuredPhotos = {
   hero: "/photos/photo-12.jpg",
   storyPreview: "/photos/photo-04.jpg",
-  dressCode: "/photos/photo-08.jpg",
-  location: "/photos/photo-01.jpg",
+  dressCode: "/photos/photo-16.jpg",
+  location: "/photos/photo-14.jpg",
   closing: "/photos/photo-11.jpg",
 };
 

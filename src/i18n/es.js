@@ -93,7 +93,6 @@ export default {
     paletteEyebrow: "Inspiración de color",
     paletteTitle: "Nuestra paleta costera",
     paletteText: "Estos colores son una inspiración, no un requisito.",
-    gentleNote: "Les pedimos reservar el blanco y el marfil para las novias.",
   },
 
   gifts: {

@@ -3,7 +3,7 @@ import PageHero from "../components/PageHero";
 import { featuredPhotos } from "../data";
 import useLang from "../i18n/useLang";
 
-const palette = ["#F7A8D0", "#F4D8D0", "#E9DFD0", "#C2C0C2", "#A9B8AE"];
+const palette = ["#FFFFFF", "#FA8ECA", "#FBDCE9", "#E3E1DF", "#B6B4B2"];
 const tipIcons = [Sun, Shirt, Sparkles, Check];
 
 export default function DressCode() {
@@ -53,7 +53,6 @@ export default function DressCode() {
               </div>
             ))}
           </div>
-          <p className="gentle-note">{t.dressCode.gentleNote}</p>
         </div>
       </section>
     </>
