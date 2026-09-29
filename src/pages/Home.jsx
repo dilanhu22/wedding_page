@@ -1,4 +1,4 @@
-import { ArrowDown, MapPin } from "lucide-react";
+import { ArrowDown, MapPin, Video } from "lucide-react";
 import { Link } from "react-router-dom";
 import CalendarButton from "../components/CalendarButton";
 import Countdown from "../components/Countdown";
@@ -66,6 +66,20 @@ export default function Home() {
               {t.home.previewLink} <span>→</span>
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="virtual-section section">
+        <div className="shell narrow center virtual-card">
+          <div className="round-icon"><Video /></div>
+          <p className="eyebrow">{t.home.virtualEyebrow}</p>
+          <h2>{t.home.virtualTitle}</h2>
+          <p className="lead">{t.home.virtualText}</p>
+          <span className="button button-disabled" aria-disabled="true">
+            <Video size={18} />
+            {t.home.virtualButton}
+          </span>
+          <p className="pending-label">{t.home.virtualPending}</p>
         </div>
       </section>
 

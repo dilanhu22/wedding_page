@@ -11,6 +11,8 @@ const links = [
   { to: "/dress-code", key: "dressCode" },
   { to: "/gifts", key: "gifts" },
   { to: "/location", key: "location" },
+  { to: "/travel", key: "travel" },
+  { to: "/activities", key: "activities" },
 ];
 
 export default function Layout() {
@@ -32,7 +34,9 @@ export default function Layout() {
 
   return (
     <div className="site-shell">
-      <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
+      <header
+        className={`site-header ${location.pathname !== "/" ? "is-internal" : ""} ${scrolled ? "is-scrolled" : ""}`}
+      >
         <NavLink to="/" className="brand" aria-label={t.aria.goHome}>
           <span>{wedding.firstName}</span>
           <Heart size={13} fill="currentColor" strokeWidth={1.5} />
@@ -44,11 +48,12 @@ export default function Layout() {
           onClick={() => setOpen((value) => !value)}
           aria-label={open ? t.aria.closeNav : t.aria.openNav}
           aria-expanded={open}
+          aria-controls="main-navigation"
         >
           {open ? <X /> : <Menu />}
         </button>
 
-        <nav className={`main-nav ${open ? "is-open" : ""}`}>
+        <nav id="main-navigation" className={`main-nav ${open ? "is-open" : ""}`} aria-label={t.aria.mainNav}>
           {links.map((link) => (
             <NavLink
               key={link.to}

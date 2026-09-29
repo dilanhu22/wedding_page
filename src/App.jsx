@@ -6,6 +6,8 @@ import Story from "./pages/Story";
 import DressCode from "./pages/DressCode";
 import Gifts from "./pages/Gifts";
 import Location from "./pages/Location";
+import Travel from "./pages/Travel";
+import Activities from "./pages/Activities";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -28,6 +30,8 @@ export default function App() {
           <Route path="/dress-code" element={<DressCode />} />
           <Route path="/gifts" element={<Gifts />} />
           <Route path="/location" element={<Location />} />
+          <Route path="/travel" element={<Travel />} />
+          <Route path="/activities" element={<Activities />} />
         </Route>
       </Routes>
     </>

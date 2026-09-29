@@ -42,22 +42,31 @@ export const storyPhotos = [
 ];
 
 export const featuredPhotos = {
-  hero: "/photos/photo-12.jpg",
+  hero: "/media/hero-couple.jpeg",
   storyPreview: "/photos/photo-04.jpg",
   dressCode: "/photos/photo-16.jpg",
-  location: "/photos/photo-14.jpg",
   closing: "/photos/photo-11.jpg",
 };
 
-// Datos bancarios pendientes: siguen siendo un placeholder y la interfaz
-// los marca como temporales hasta que tengamos los definitivos.
-export const bankDetails = {
-  accountName: "Shantal Example & Christina Example",
-  bankName: "Example National Bank",
-  accountType: "Savings account",
-  accountNumber: "0000 0000 0000",
-  iban: "MX00 0000 0000 0000 0000 00",
-  swift: "EXAMPLEMX",
-  currency: "USD",
-  reference: "Shantal & Christina Wedding",
+export const media = {
+  attire: ["/media/attire-tailored-v2.jpg", "/media/attire-dresses-v3.jpg"],
+  giftQr: "/media/zelle-qr.png",
+  hotelPhotos: {
+    aerial: "/media/hotel-aerial.jpg",
+    terrace: "/media/hotel-terrace.jpeg",
+    room: "/media/hotel-room.jpg",
+  },
+  hotelVideo: "/media/hotel-video.mp4",
+  activities: [
+    "/media/activity-thursday.png",
+    null,
+    "/media/activity-saturday.jpeg",
+    "/media/activity-sunday.jpeg",
+    "/media/activity-monday.jpeg",
+  ],
+};
+
+export const externalLinks = {
+  venmo: "https://venmo.com/code?user_id=1496633992806400121&created=1790560346",
+  transportation: "https://caribbean-transfers.com/",
 };

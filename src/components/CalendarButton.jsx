@@ -18,7 +18,7 @@ export default function CalendarButton({ className = "button button-primary" }) 
       className={className}
       href={`https://calendar.google.com/calendar/render?${params}`}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
     >
       <CalendarPlus size={18} />
       {t.calendar.button}
