@@ -1,4 +1,4 @@
-import { CalendarDays, Image as ImageIcon, Sparkles } from "lucide-react";
+import { CalendarDays, Sparkles } from "lucide-react";
 import PageHero from "../components/PageHero";
 import { media } from "../data";
 import useLang from "../i18n/useLang";
@@ -15,7 +15,7 @@ export default function Activities() {
             {t.activities.events.map((event, index) => (
               <article className={`event-card event-card-${index + 1}`} key={event.day}>
                 <div className="event-media">
-                  {media.activities[index] ? <img src={media.activities[index]} alt={event.alt} loading="lazy" /> : <div className="media-placeholder" role="img" aria-label={t.activities.photoPending}><ImageIcon aria-hidden="true" /><span>{t.activities.photoPending}</span></div>}
+                  <img src={media.activities[index]} alt={event.alt} loading="lazy" />
                 </div>
                 <div className="event-copy"><span className="event-day">{event.day}</span><h3>{event.name}</h3>{event.theme ? <p><Sparkles size={16} aria-hidden="true" /> {event.theme}</p> : null}</div>
               </article>

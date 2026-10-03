@@ -31,7 +31,7 @@ export default {
     ],
     paletteEyebrow: "Wedding Theme", paletteTitle: "Preferably Pink", paletteText: "A romantic palette inspired by blush, vibrant pinks, and sophisticated greys.", paletteAria: "Wedding color palette",
     avoidEyebrow: "A thoughtful note", avoidTitle: "PLEASE AVOID", avoidText: "To keep the celebration polished and cohesive, please avoid the following:",
-    avoidItems: ["Black", "White outfits", "Dress shorts", "Sneakers", "Sandals or flip-flops", "Swimwear", "T-shirts or casual items"],
+    avoidItems: ["Black", "White outfits", "Dress shorts", "Sandals or flip-flops", "Swimwear", "T-shirts or casual items"],
   },
   gifts: {
     eyebrow: "Your presence is the greatest gift", title: "Gifts",
@@ -71,10 +71,10 @@ export default {
     avoidTitle: "Companies to avoid", avoidCompanies: "Thrifty, Fox, and Dollar",
   },
   activities: {
-    eyebrow: "Celebrate all weekend", title: "Activities", text: "A look at the moments we hope to share before, during, and after the wedding.", eventsEyebrow: "Our time together", eventsTitle: "Wedding Events", photoPending: "[PENDING: ACTIVITY PHOTO 2]",
+    eyebrow: "Celebrate all weekend", title: "Activities", text: "A look at the moments we hope to share before, during, and after the wedding.", eventsEyebrow: "Our time together", eventsTitle: "Wedding Events",
     events: [
       { day: "THURSDAY", name: "Bachelorette Parties!", theme: "Sexy / party time", alt: "Mandala nightclub inspiration for the Thursday celebration" },
-      { day: "FRIDAY", name: "Free Day", theme: "Enjoy the day and HYDRATE", alt: "Friday free-day activity photo" },
+      { day: "FRIDAY", name: "Free Day", theme: "Enjoy the day and HYDRATE", alt: "Colorful Cancún sign beside the hotel pool, palm trees, and Caribbean Sea" },
       { day: "SATURDAY", name: "Wedding Day!!", theme: "Pink elegance", alt: "Outdoor ceremony terrace prepared for the wedding" },
       { day: "SUNDAY", name: "Beach Party!", theme: "Colorful Mexican beachwear / guayabera", alt: "Colorful patterned guayabera inspiration for Sunday" },
       { day: "MONDAY", name: "Travel home safely!", theme: "", alt: "Shantal and Christina making a heart shape together" },

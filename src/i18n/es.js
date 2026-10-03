@@ -29,7 +29,7 @@ export default {
     ],
     paletteEyebrow: "Tema de la boda", paletteTitle: "Preferiblemente rosa", paletteText: "Una paleta romántica inspirada en tonos blush, rosas vibrantes y grises sofisticados.", paletteAria: "Paleta de colores de la boda",
     avoidEyebrow: "Una nota importante", avoidTitle: "POR FAVOR EVITÁ", avoidText: "Para mantener una celebración elegante y armoniosa, por favor evitá lo siguiente:",
-    avoidItems: ["Negro", "Conjuntos blancos", "Shorts de vestir", "Tenis", "Sandalias o chanclas", "Trajes de baño", "Camisetas o prendas casuales"],
+    avoidItems: ["Negro", "Conjuntos blancos", "Shorts de vestir", "Sandalias o chanclas", "Trajes de baño", "Camisetas o prendas casuales"],
   },
   gifts: {
     eyebrow: "Tu presencia es el mejor regalo", title: "Regalos", text: "Compartir esta celebración con vos significa muchísimo para nosotras.",
@@ -68,10 +68,10 @@ export default {
     avoidTitle: "Compañías a evitar", avoidCompanies: "Thrifty, Fox y Dollar",
   },
   activities: {
-    eyebrow: "Celebremos todo el fin de semana", title: "Actividades", text: "Una mirada a los momentos que esperamos compartir antes, durante y después de la boda.", eventsEyebrow: "Nuestro tiempo juntas", eventsTitle: "Eventos de la boda", photoPending: "[PENDIENTE: FOTO DE ACTIVIDAD 2]",
+    eyebrow: "Celebremos todo el fin de semana", title: "Actividades", text: "Una mirada a los momentos que esperamos compartir antes, durante y después de la boda.", eventsEyebrow: "Nuestro tiempo juntas", eventsTitle: "Eventos de la boda",
     events: [
       { day: "JUEVES", name: "¡Fiestas de despedida!", theme: "Sexy / hora de fiesta", alt: "Inspiración de Mandala nightclub para la celebración del jueves" },
-      { day: "VIERNES", name: "Día libre", theme: "Disfrutá el día y MANTENETE HIDRATADA", alt: "Foto de actividad para el día libre del viernes" },
+      { day: "VIERNES", name: "Día libre", theme: "Disfrutá el día y MANTENETE HIDRATADA", alt: "Letrero colorido de Cancún junto a la piscina del hotel, palmeras y el mar Caribe" },
       { day: "SÁBADO", name: "¡¡Día de la boda!!", theme: "Elegancia rosa", alt: "Terraza exterior preparada para la ceremonia de boda" },
       { day: "DOMINGO", name: "¡Fiesta en la playa!", theme: "Ropa de playa mexicana colorida / guayabera", alt: "Inspiración de guayabera colorida para el domingo" },
       { day: "LUNES", name: "¡Buen viaje de regreso!", theme: "", alt: "Shantal y Christina formando un corazón juntas" },

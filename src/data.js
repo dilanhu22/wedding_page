@@ -59,7 +59,7 @@ export const media = {
   hotelVideo: "/media/hotel-video.mp4",
   activities: [
     "/media/activity-thursday.png",
-    null,
+    "/media/activity-friday-cancun.jpg",
     "/media/activity-saturday.jpeg",
     "/media/activity-sunday.jpeg",
     "/media/activity-monday.jpeg",
