@@ -1308,7 +1308,7 @@ video:focus-visible {
 
 .color-palette {
   display: grid;
-  grid-template-columns: repeat(6, minmax(100px, 1fr));
+  grid-template-columns: repeat(5, minmax(100px, 1fr));
   gap: 1rem;
   margin: 3rem auto 0;
 }
@@ -1522,8 +1522,20 @@ video:focus-visible {
   .hero-photo { background-position: 47% center; }
   .attire-card { border-radius: 80px 80px 20px 20px; }
   .attire-image { aspect-ratio: 4 / 3; }
-  .color-palette { gap: 1.2rem .4rem; }
-  .swatch-circle { min-width: 68px; width: 68px; border-width: 3px; }
+  .color-palette {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1.2rem 0;
+  }
+  .color-palette .color-swatch:nth-child(1) { grid-column: 2 / span 2; }
+  .color-palette .color-swatch:nth-child(2) { grid-column: 4 / span 2; }
+  .color-palette .color-swatch:nth-child(3) { grid-column: 1 / span 2; }
+  .color-palette .color-swatch:nth-child(4) { grid-column: 3 / span 2; }
+  .color-palette .color-swatch:nth-child(5) { grid-column: 5 / span 2; }
+  .color-palette .swatch-circle {
+    min-width: 68px;
+    width: 68px;
+    border-width: 3px;
+  }
   .color-palette strong { font-size: .86rem; line-height: 1.2; }
   .avoid-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hotel-gallery-main { min-height: 0; border-radius: 100px 20px 20px 20px; }

@@ -13,7 +13,6 @@ import { media } from "../data";
 import useLang from "../i18n/useLang";
 
 const palette = [
-  { name: "White Blush", color: "#FAF2F1" },
   { name: "Bright Pink", color: "#E95A91" },
   { name: "Soft Pink", color: "#EFA5C2" },
   { name: "Dusty Pink", color: "#CFA29E" },
