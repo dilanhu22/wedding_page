@@ -34,6 +34,7 @@ export default {
   gifts: {
     eyebrow: "Tu presencia es el mejor regalo", title: "Regalos", text: "Compartir esta celebración con vos significa muchísimo para nosotras.",
     messageTitle: "Celebrar juntas es todo lo que necesitamos", messageText: "Nos sentimos muy afortunadas de compartir este día con vos. Si querés hacernos un regalo, una contribución para nuestra luna de miel será recibida con mucho cariño, pero nunca es algo que esperemos.",
+    mailingText: "Agradecemos cualquier regalo especial o personalizado. Si alguien desea enviarnos uno, esta es nuestra dirección:",
     signoff: "Con amor, Shantal y Christina", fundsEyebrow: "Para nuestra próxima aventura", fundsTitle: "FONDO PARA LA LUNA DE MIEL",
     fundsText: "Tu presencia es el mejor regalo. Si querés contribuir a nuestra luna de miel, podés usar el código QR o el enlace a continuación.",
     qrAlt: "Código QR de Zelle para el fondo de luna de miel de Shantal y Christina", cta: "Enviar un regalo para la luna de miel",
@@ -42,7 +43,7 @@ export default {
     eyebrow: "Donde nos daremos el sí", title: "La ubicación", text: "Acompáñanos en un hotel cerca de la costa en Cancún para nuestra ceremonia y recepción.",
     sectionEyebrow: "Ceremonia y recepción", arrivalLabel: "Horario", areaLabel: "Zona",
     body: "La ceremonia y la recepción se realizarán completamente dentro de las instalaciones del hotel, ubicado cerca de la costa.",
-    openMaps: "Abrir en Maps", hotelSite: "Sitio del hotel",
+    openMaps: "Abrir en Maps", hotelSite: "Sitio del hotel", instagram: "Instagram del hotel",
     galleryEyebrow: "Conocé el lugar", galleryTitle: "Krystal Cancún Hotel", galleryText: "Descubrí el entorno del hotel donde celebraremos juntas.",
     hotelPhotoAlts: { aerial: "Vista aérea del Krystal Cancún Hotel, sus piscinas y la costa", terrace: "Terraza exterior para ceremonias del Krystal Cancún Hotel con filas de sillas y vista al mar", room: "Habitación del Krystal Cancún Hotel con cama, sofá y balcón con vista al mar" },
     hotelPhotoCaptions: { aerial: "Vista aérea del hotel y sus piscinas.", terrace: "La terraza exterior para ceremonias del hotel.", room: "Una habitación con balcón y vista al mar." },

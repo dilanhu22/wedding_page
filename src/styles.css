@@ -782,6 +782,35 @@ h2 {
   color: var(--muted);
 }
 
+.gift-mailing-note {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 1.75rem;
+  padding: 1.25rem;
+  border-left: 3px solid var(--pink-deep);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.gift-mailing-note > svg {
+  flex: 0 0 auto;
+  width: 21px;
+  margin-top: 0.15rem;
+  color: var(--pink-deep);
+}
+
+.gift-mailing-note p {
+  margin: 0 0 0.65rem;
+  color: var(--muted);
+}
+
+.gift-mailing-note address {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-style: normal;
+  line-height: 1.55;
+}
+
 .gift-signoff {
   display: flex;
   align-items: center;

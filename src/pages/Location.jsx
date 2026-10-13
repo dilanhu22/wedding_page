@@ -1,5 +1,5 @@
 import {
-  Clock, Compass, Droplets, ExternalLink, Hotel, Luggage, MapPin,
+  Clock, Compass, Droplets, ExternalLink, Hotel, Instagram, Luggage, MapPin,
   Navigation, ShieldCheck, Smartphone, UtensilsCrossed,
 } from "lucide-react";
 import CalendarButton from "../components/CalendarButton";
@@ -29,9 +29,12 @@ export default function Location() {
             <p>{t.location.body}</p>
             <div className="button-row left">
               <a className="button button-primary" href={wedding.mapUrl} target="_blank" rel="noopener noreferrer"><MapPin size={18} /> {t.location.openMaps}</a>
-              <a className="button button-ghost" href={wedding.hotelUrl} target="_blank" rel="noopener noreferrer"><Hotel size={18} /> {t.location.hotelSite} <ExternalLink size={15} /></a>
+              <CalendarButton />
             </div>
-            <div className="button-row left"><CalendarButton /></div>
+            <div className="button-row left">
+              <a className="button button-ghost" href={wedding.hotelUrl} target="_blank" rel="noopener noreferrer"><Hotel size={18} /> {t.location.hotelSite} <ExternalLink size={15} /></a>
+              <a className="button button-ghost" href={wedding.instagramUrl} target="_blank" rel="noopener noreferrer"><Instagram size={18} /> {t.location.instagram} <ExternalLink size={15} /></a>
+            </div>
           </div>
         </div>
       </section>
