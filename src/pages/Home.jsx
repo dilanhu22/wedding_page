@@ -1,4 +1,4 @@
-import { ArrowDown, MapPin, Video } from "lucide-react";
+import { ArrowDown, Camera, MapPin, ScanLine, Video } from "lucide-react";
 import { Link } from "react-router-dom";
 import CalendarButton from "../components/CalendarButton";
 import Countdown from "../components/Countdown";
@@ -66,6 +66,34 @@ export default function Home() {
               {t.home.previewLink} <span>→</span>
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="memory-section section" aria-labelledby="memory-title">
+        <div className="shell memory-card">
+          <div className="memory-copy">
+            <div className="round-icon" aria-hidden="true"><Camera /></div>
+            <p className="eyebrow">{t.home.memoriesEyebrow}</p>
+            <h2 id="memory-title">{t.home.memoriesTitle}</h2>
+            <p className="lead">{t.home.memoriesText}</p>
+            <div className="scan-note">
+              <ScanLine aria-hidden="true" />
+              <div>
+                <strong>{t.home.memoriesScan}</strong>
+                <span>{t.home.memoriesHint}</span>
+              </div>
+            </div>
+          </div>
+
+          <figure className="memory-qr">
+            <div className="memory-qr-frame">
+              <img
+                src="/media/wedding-memories-qr.png"
+                alt={t.home.memoriesQrAlt}
+              />
+            </div>
+            <figcaption>{t.home.memoriesCaption}</figcaption>
+          </figure>
         </div>
       </section>
 
