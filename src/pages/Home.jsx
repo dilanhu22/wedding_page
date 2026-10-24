@@ -103,11 +103,15 @@ export default function Home() {
           <p className="eyebrow">{t.home.virtualEyebrow}</p>
           <h2>{t.home.virtualTitle}</h2>
           <p className="lead">{t.home.virtualText}</p>
-          <span className="button button-disabled" aria-disabled="true">
+          <a
+            className="button"
+            href={wedding.googleMeetUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
             <Video size={18} />
             {t.home.virtualButton}
-          </span>
-          <p className="pending-label">{t.home.virtualPending}</p>
+          </a>
         </div>
       </section>
 

@@ -12,6 +12,7 @@ export const wedding = {
     "https://en.krystal-cancun.com/?partner=9072&gad_source=1&gad_campaignid=21510555823",
   instagramUrl:
     "https://www.instagram.com/krystalcancunhotel?stkn=MXd0eWZ1NHd5Y3l3eA==",
+  googleMeetUrl: "https://meet.google.com/bdp-fojp-fvx",
   address:
     "Blvd. Kukulcan Km 8.5-Km. 9 Lotes 9 y 9A, Punta Cancun, Zona Hotelera, 77500 Cancún, Q.R., México",
   mapUrl:
